@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <title>Exmen - Practico - 1</title>
+  <style>
+    body{
+      background: #0F2027;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    nav{
+      box-shadow: 5px 5px 15px #000000;
+    }
+
+    form{
+      box-shadow: 5px 5px 15px #000000;
+    }
+
+    #table{
+      box-shadow: 5px 5px 15px #000000;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning pt-4 pb-4">
+    <div class="container">
+      <a class="navbar-brand text-secondary fw-bold">ITCA-FEPADE</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+          <a class="nav-link" href="./pages/about.html">Acerca de</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container ">
+    <div class="row mt-5">
+      <div class="col-md-5 ">
+        <form id="formulario" class="border p-3 bg-white" >
+          <div class="mb-3">
+            <label for="nombre" class="form-label fw-bold">Nombre Completo</label>
+            <input type="text" class="form-control" name="nombre" id="nombre-completo" autofocus >
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label fw-bold">Email</label>
+            <input type="email" name="email" class="form-control" id="email">
+          </div>
+          <div class="mb-3">
+            <label for="cum" class="form-label fw-bold">Nota Cum</label>
+            <input type="text" name="cum" class="form-control" id="cum" >
+          </div>
+          <div class="mb-3">
+            <label for="bachillerato" class="form-label fw-bold">Nombre de la institución donde cursaste el bachillerato</label>
+            <input type="text" name="bachillerato" class="form-control" id="bachillerato" >
+          </div>
+          <div class="mb-3">
+            <select id="tipo-institucion" name="tipo-institucion" class="form-select fw-bold" aria-label="Default select example">
+              <option selected>Elige tipo de institucion donde estudiaste</option>
+              <option value="publica">Publica</option>
+              <option value="privada">Privada</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <select id="sede" name="sede" class="form-select fw-bold" aria-label="Default select example">
+              <option selected>Elige la sede donde deseas estudiar</option>
+              <option value="Regional San miguel">Regional San miguel</option>
+              <option value="Sede Santa Tecla">Sede Santa Tecla</option>
+              <option value="Regional La Unión">Regional La Unión</option>
+              <option value="Regional Santa Ana">Regional Santa Ana</option>
+              <option value="Regional Zacatecoluca">Regional Zacatecoluca</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <select id="carrera" name="carrera" class="form-select fw-bold" aria-label="Default select example">
+              <option selected>Elige la carrera que deseas estudiar</option>
+              <option value="Tecn. Ing. en Sistemas Informaticos">Tecn. Ing. en Sistemas Informaticos</option>
+              <option value="Tecn. Ing en Redes Informaticos">Tecn. Ing en Redes Informaticos</option>
+              <option value="Tecn. Ing Civil">Tecn. Ing en Civil</option>
+              <option value="Tecn. Ing Electrica">Tecn. Ing en Electrica</option>
+            </select>
+          </div>
+          <button id="enviar" class="btn btn-primary mt-4">Submit</button>
+        </form>
+      </div>
+      <div class="col-md-7">
+        <div class="card" id="table">
+          <div class="card-body">
+            <h1>Resultados</h1>
+            <table class="table table-hover border">
+              <tr>
+                <th>Nombre del Estudiante: </th> </th>
+                <td id="estudiante"></td>
+              </tr>
+              <tr>
+                <th>Email: </th>
+                <td id="mi-email"></td>
+              </tr>
+              <tr>
+                <th>Cum: </th>
+                <td id="mi-cum"></td>
+              </tr>
+              <tr>
+                <th>Nombre de la escuela:  </th>
+                <td id="mi-escuela"></td>
+              </tr>
+              <tr>
+                <th>Tipo de institucion: </th>
+                <td id="mi-tipo-escuela"></td>
+              </tr>
+              <tr>
+                <th class="text-center bg-dark text-white" colspan="2">Estos son los costos de mensualidad y matricula segun datos ingresados</th>
+              </tr>
+              <tr>
+                <th>Nombre de la sede: </th>
+                <td id="mi-sede"></td>
+              </tr>
+              <tr>
+                <th>Carrera: </th>
+                <td id="mi-carrera"></td>
+              </tr>
+              <tr>
+                <th>Costo de matricula:</th>
+                <td id="mi-costo-matricula"></td>
+              </tr>
+              <tr>
+                <th>Costo de mensualidad: </th>
+                <td id="mi-costo-mensual"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="./js/main.js" type="module"></script>
+</body>
+</html>
